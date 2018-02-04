@@ -5,9 +5,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import com.wxbc.query.QueryService;
 import com.wxbc.util.CommonParams;
+import org.apache.axis.components.logger.LogFactory;
 
 public class QueryTest {
 	public static void main(String[] args) throws IOException {

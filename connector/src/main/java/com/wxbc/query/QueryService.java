@@ -1,17 +1,13 @@
 package com.wxbc.query;
 
-import java.rmi.RemoteException;
-
-import javax.xml.namespace.QName;
-import javax.xml.rpc.ParameterMode;
-import javax.xml.rpc.ServiceException;
-
+import com.wxbc.util.CommonParams;
+import com.wxbc.util.DESUtils;
 import org.apache.axis.client.Call;
 import org.apache.axis.client.Service;
 import org.apache.axis.encoding.XMLType;
 
-import com.wxbc.util.CommonParams;
-import com.wxbc.util.DESUtils;
+import javax.xml.namespace.QName;
+import javax.xml.rpc.ParameterMode;
 
 public class QueryService {
 	
