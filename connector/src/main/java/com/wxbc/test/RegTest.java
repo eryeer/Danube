@@ -7,12 +7,14 @@ import com.wxbc.util.FileUtils;
 
 public class RegTest {
 	public static void main(String[] args) {
-		RegisterService loginReg = new RegisterService();
-		String loginToken = loginReg.regLogin(CommonParams.USERNAME, CommonParams.USERPASSWORD);
+		RegisterService service = new RegisterService();
+		String loginToken = service.regLogin(CommonParams.USERNAME, CommonParams.USERPASSWORD);
 		System.out.println(loginToken);
-		String result = loginReg.enregister("AR", loginToken, "testXML001", new XMLOrger().enregisterContent(), FileUtils.getBytes("C:/Users/eryeer/Desktop/git/agreement.zip"));
+//		String result = service.initRegister("AR", loginToken, "testXML001", new XMLOrger().initRegisterContent(), FileUtils.getBytes("C:/Users/eryeer/Desktop/git/agreement.zip"));
+		String result = service.AmendRegister("AR", loginToken, "00862307000107283848",
+				"357jrrv7", "testXML002", new XMLOrger().amendRegisterContent(),
+				FileUtils.getBytes("C:/Users/eryeer/Desktop/git/agreement.zip"));
 		System.out.println(result);
-		
 	}
 
 }

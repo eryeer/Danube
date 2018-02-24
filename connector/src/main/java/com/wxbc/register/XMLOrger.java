@@ -12,10 +12,59 @@ import org.dom4j.io.XMLWriter;
 public class XMLOrger {
 	public static void main(String[] args) {
 		XMLOrger xmlOrger = new XMLOrger();
-		String content = xmlOrger.enregisterContent();
+		String content = xmlOrger.amendRegisterContent();
 		System.out.println(content);
 	}
-	public String enregisterContent() {
+
+	public String amendRegisterContent(){
+		// 创建Document对象
+		Document document = DocumentHelper.createDocument();
+		Element register = document.addElement("register");
+		Element authperson = register.addElement("authperson");
+		authperson.setText("尔康");
+		Element title = register.addElement("title");
+		title.setText("TestAmend001");
+		Element amenditems = register.addElement("amenditems");
+		amenditems.addElement("debtoritem");
+		//====出质人====//
+		Element debtors = register.addElement("debtors");
+		Element debtor = debtors.addElement("debtor");
+		debtor.addAttribute("id", "1");
+		Element debtortype = debtor.addElement("debtortype");
+		debtortype.setText("02");
+		Element debtorname = debtor.addElement("debtorname");
+		debtorname.setText("上海非专用测试有限公司");
+		Element certificatecode1 = debtor.addElement("certificatecode");
+		certificatecode1.setText("123456789987654321");
+		Element industryregistrationcode1 = debtor.addElement("industryregistrationcode");
+		industryregistrationcode1.setText("123456789987654321");
+		Element corporationname1 = debtor.addElement("corporationname");
+		corporationname1.setText("赵大军");
+		Element industrycode1 = debtor.addElement("industrycode");
+		industrycode1.setText("C");
+		Element corporationscale1 = debtor.addElement("corporationscale");
+		corporationscale1.setText("10");
+		Element address1 = debtor.addElement("address");
+		Element nationality1 = address1.addElement("nationality");
+		nationality1.setText("CHN");
+		Element province1 = address1.addElement("province");
+		province1.setText("220000");
+		Element city1 = address1.addElement("city");
+		city1.setText("220100");
+		Element detailaddress1 = address1.addElement("detailaddress");
+		detailaddress1.setText("岸边路202号");
+		Element agreements = register.addElement("agreements");
+		Element agreement = agreements.addElement("agreement");
+		Element agreementname = agreement.addElement("agreementname");
+		agreementname.setText("agreement.jpg");
+		try {
+			return outputXmltoString(document);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public String initRegisterContent() {
 		// 创建Document对象
 		Document document = DocumentHelper.createDocument();
 		Element register = document.addElement("register");

@@ -2,10 +2,8 @@ package com.wxbc.test;
 
 import com.wxbc.query.QueryService;
 import com.wxbc.util.CommonParams;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+
+import java.io.*;
 import java.net.URL;
 
 public class QueryTest {
